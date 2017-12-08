@@ -24,37 +24,37 @@ bool timeOK(char time[]);
 
 int main()
 {
-     char dayPeriod[5], ans;
-	 char time[6];
+    char dayPeriod[5], ans;
+    char time[6];
 
-	 do
-	 {
-		 input(time);
-		 convert(time, dayPeriod);
-		 output(time, dayPeriod, ans);
+    do
+    {
+        input(time);
+        convert(time, dayPeriod);
+        output(time, dayPeriod, ans);
 
-		 if(ans == 'y' || ans == 'Y')
-			 cout<<"\n\n";
-	 }while(ans == 'y' || ans == 'Y');
+        if(ans == 'y' || ans == 'Y')
+            cout<<"\n\n";
+    }while(ans == 'y' || ans == 'Y');
 
-	return 0;
+    return 0;
 }
 
 void input(char time[])
 {
-	cout<<"Enter time in 24 hr notation: ";
-	cin.getline(time, 6);
+    cout<<"Enter time in 24 hr notation: ";
+    cin.getline(time, 6);
 
     char temp[6];
     strcat(temp, time);
 
-	if (timeOK(temp))
-		return;
-	else
-	{
-		cout<<"aFatal Error: Aborting program.";
-		exit(1);
-	}
+    if (timeOK(temp))
+        return;
+    else
+    {
+        cout<<"aFatal Error: Aborting program.";
+        exit(1);
+    }
 }
 
 void convert(char time[], char dayPeriod[])
@@ -62,16 +62,16 @@ void convert(char time[], char dayPeriod[])
     int hour = atoi(strtok(time, ":"));
     char *minutes = strtok(NULL, ":");
 
-	if ((hour >= 1 && hour < 12) || hour == 24)
-		strcpy(dayPeriod, "A.M.");
-	else
-		strcpy(dayPeriod, "P.M.");
+    if ((hour >= 1 && hour < 12) || hour == 24)
+        strcpy(dayPeriod, "A.M.");
+    else
+        strcpy(dayPeriod, "P.M.");
 
     char hour_str[4], colon[2] = ":";
-    
-	switch(hour)
-	{
-	    case 1:
+
+    switch(hour)
+    {
+        case 1:
             strcpy(hour_str,"1");
             strcpy(time, strcat(strcat(hour_str,colon), minutes));
             break;
@@ -192,7 +192,7 @@ void output(char time[], char dayPeriod[], char& a)
    {
    cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
    }
-*/
+   */
 
 bool timeOK(char time[])
 {
